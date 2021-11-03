@@ -41,7 +41,7 @@ const VirtualList: React.FC<VirtualListProps> = (props) => {
     return data.slice(currIndexArr[0], currIndexArr[1] + 1).map((item) => ({
       origin: item,
       pos: currIndexArr[0] * height,
-      index: currIndexArr[0]++
+      index: `VLitem_${currIndexArr[0]++}`
     }));
   };
 
@@ -60,7 +60,7 @@ const VirtualList: React.FC<VirtualListProps> = (props) => {
 
   // scroll 事件
   const scrcollEvent = (e) => {
-    if (e.target === virtualListRef.current) {
+    if (e?.target === virtualListRef.current) {
       const diffSliceIndexes = getDiffIndexes(
         getDataInview(props.data),
         getCurrFirstLastIndex()
@@ -74,7 +74,7 @@ const VirtualList: React.FC<VirtualListProps> = (props) => {
         const item = getDataInview(props.data)[index];
         item.origin = data[index];
         item.pos = newIndex * height;
-        item.index = newIndex++;
+        item.index = `VLitem_${newIndex++}`;
       });
     }
     setData(getDataInview(props.data));
