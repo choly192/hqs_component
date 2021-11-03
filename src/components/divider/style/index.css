@@ -1,0 +1,29 @@
+.divider {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #000000d9;
+  font-size: 14px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+.divider-horizontal {
+  display: flex;
+  clear: both;
+  width: 100%;
+}
+.divider-vertical {
+  position: relative;
+  top: -0.06em;
+  display: inline-block;
+  height: 0.9em;
+  margin: 0 8px;
+  vertical-align: middle;
+  border-top: 0;
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+}
+.divider-dashed {
+  background: 0 0;
+  border-color: #0000000f;
+  border-style: dashed;
+  border-width: 1px 0 0;
+}
