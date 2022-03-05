@@ -1,0 +1,15 @@
+{
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx"
+    ],
+    "exclude": [
+        "src/server"
+    ],
+    "compilerOptions": {
+        "jsx": "react",
+        "module": "commonjs",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true
+    }
+}

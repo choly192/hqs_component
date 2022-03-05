@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "jsx": "react-jsx",
+        "module": "commonjs",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "outDir": "dist/development",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "target": "es6",
+    },
+    "include": [
+        "src/server"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "watchOptions": {
+        // https://segmentfault.com/a/1190000040544769 
+        "watchFile": "useFsEvents",
+        "watchDirectory": "useFsEvents",
+        "fallbackPolling": "dynamicPriority",
+        "synchronousWatchDirectory": true
+    }
+}

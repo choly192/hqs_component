@@ -1,0 +1,31 @@
+{
+  "name": "b2c-site-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://git.newegg.org/cd32/b2c-site-demo.git",
+  "author": "Chester.X.Dong@newegg.com",
+  "license": "MIT",
+  "dependencies": {
+    "@types/gulp": "^4.0.9",
+    "nodemon": "^2.0.15",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^8.2.2",
+    "@nestjs/core": "^8.2.2",
+    "@nestjs/platform-express": "^8.2.2",
+    "@types/express": "^4.17.13",
+    "@types/react": "^17.0.35",
+    "@types/react-dom": "^17.0.11",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.4.0",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.1"
+  }
+}

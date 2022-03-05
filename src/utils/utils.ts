@@ -1,7 +1,7 @@
 /**
  * tools funcion
  */
-
+import moment from "moment";
 // 格式化时间
 export function formatDate(date, str) {
   const obj = {
@@ -205,4 +205,93 @@ export const throttle = (fn, delay: number) => {
       return fn.apply(context, args);
     }
   };
+};
+
+/**
+ * 获取时间差值
+ * @param preTimes oldTime
+ */
+export const getDiffTime = (preTimes = "2021-11-05 17:36:36") => {
+  const preTime = moment(preTimes);
+  const currTime = moment();
+  const minute = currTime.diff(preTime, "minute");
+  const hour = currTime.diff(preTime, "hour");
+  const day = currTime.diff(preTime, "day");
+  const week = currTime.diff(preTime, "week");
+
+  if (minute < 1) return "NOW";
+  if (minute >= 1 && minute < 60) return `${minute}m`;
+  if (hour >= 1 && hour < 24) return `${hour}h`;
+  if (day >= 1 && day < 7) return `${day}d`;
+  if (week >= 1 && week < 9) return `${week}w`;
+};
+
+/**
+ * 获取浏览器的类型和版本
+ */
+export const getBrowserModelandVersion = () => {
+  let t = navigator.userAgent.toLowerCase();
+  return 0 <= t.indexOf("msie")
+    ? {
+        //ie < 11
+        type: "IE",
+        version: Number(t.match(/msie ([\d]+)/)[1])
+      }
+    : !!t.match(/trident\/.+?rv:(([\d.]+))/)
+    ? {
+        // ie 11
+        type: "IE",
+        version: 11
+      }
+    : 0 <= t.indexOf("edge")
+    ? {
+        type: "Edge",
+        version: Number(t.match(/edge\/([\d]+)/)[1])
+      }
+    : 0 <= t.indexOf("firefox")
+    ? {
+        type: "Firefox",
+        version: Number(t.match(/firefox\/([\d]+)/)[1])
+      }
+    : 0 <= t.indexOf("chrome")
+    ? {
+        type: "Chrome",
+        version: Number(t.match(/chrome\/([\d]+)/)[1])
+      }
+    : 0 <= t.indexOf("opera")
+    ? {
+        type: "Opera",
+        version: Number(t.match(/opera.([\d]+)/)[1])
+      }
+    : 0 <= t.indexOf("Safari")
+    ? {
+        type: "Safari",
+        version: Number(t.match(/version\/([\d]+)/)[1])
+      }
+    : {
+        type: t,
+        version: -1
+      };
+};
+
+/**
+ * 判断是移动设备还是PC设备
+ */
+export const isMobile = () => {
+  if (
+    navigator.userAgent.match(
+      /(iPhone|iPod|Android|ios|iOS|iPad|Backerry|WebOS|Symbian|Windows Phone|Phone)/i
+    )
+  ) {
+    return "mobile";
+  }
+  return "desktop";
+};
+
+/**
+ * 判断是苹果还是安卓移动设备
+ */
+export const isAppleMobileDevice = () => {
+  let reg = /iphone|ipod|ipad|Macintosh/i;
+  return reg.test(navigator.userAgent.toLowerCase());
 };
