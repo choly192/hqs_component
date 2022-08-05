@@ -2,8 +2,7 @@
   "name": "b2c-site-demo",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://git.newegg.org/cd32/b2c-site-demo.git",
-  "author": "Chester.X.Dong@newegg.com",
+  "author": "sirius",
   "license": "MIT",
   "dependencies": {
     "@types/gulp": "^4.0.9",
